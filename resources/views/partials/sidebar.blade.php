@@ -37,7 +37,7 @@
                 <!-- Add icons to the links using the .nav-icon class
         with font-awesome or any other icon font library -->
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="{{ route('home') }}" class="nav-link">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
                             Dashboard
@@ -55,7 +55,7 @@
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-tasks"></i>
+                        <i class="nav-icon fas fa-users-cog"></i>
                         <p>
                             User Management
                             <i class="right fas fa-angle-left"></i>
@@ -75,6 +75,14 @@
                             </a>
                         </li>
                     </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('menu.index') }}" class="nav-link">
+                        <i class="nav-icon fas fa-tasks"></i>
+                        <p>
+                            Menu Management
+                        </p>
+                    </a>
                 </li>
                 <li class="nav-item">
                     <a href="../widgets.html" class="nav-link">

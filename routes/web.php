@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MenuController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\RoleController;
 use Illuminate\Support\Facades\Auth;
@@ -36,3 +37,5 @@ Route::resource('/permission', PermissionController::class)->except([
     'edit',
     'show',
 ]);
+
+Route::resource('/menu', MenuController::class);
