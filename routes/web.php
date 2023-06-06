@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\RoleController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -25,4 +26,13 @@ Route::get('/home', [
     App\Http\Controllers\HomeController::class,
     'index',
 ])->name('home');
-Route::resource('/role', RoleController::class);
+Route::resource('/role', RoleController::class)->except([
+    'create',
+    'edit',
+    'show',
+]);
+Route::resource('/permission', PermissionController::class)->except([
+    'create',
+    'edit',
+    'show',
+]);
