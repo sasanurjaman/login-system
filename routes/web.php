@@ -3,6 +3,7 @@
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\RoleController;
+use App\Http\Controllers\SubMenuController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -39,3 +40,4 @@ Route::resource('/permission', PermissionController::class)->except([
 ]);
 
 Route::resource('/menu', MenuController::class);
+Route::resource('/subMenu', SubMenuController::class);
