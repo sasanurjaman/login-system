@@ -85,6 +85,14 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a href="{{ route('profile.index') }}" class="nav-link">
+                        <i class="nav-icon fas fa-address-card"></i>
+                        <p>
+                            User Profile
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="../widgets.html" class="nav-link">
                         <i class="nav-icon fas fa-th"></i>
                         <p>

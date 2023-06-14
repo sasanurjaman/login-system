@@ -2,10 +2,12 @@
 
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\PermissionController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\SubMenuController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use PHPUnit\Framework\Attributes\Group;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,16 +30,32 @@ Route::get('/home', [
     App\Http\Controllers\HomeController::class,
     'index',
 ])->name('home');
-Route::resource('/role', RoleController::class)->except([
-    'create',
-    'edit',
-    'show',
-]);
-Route::resource('/permission', PermissionController::class)->except([
-    'create',
-    'edit',
-    'show',
-]);
 
-Route::resource('/menu', MenuController::class);
-Route::resource('/subMenu', SubMenuController::class);
+Route::group(['middleware' => 'auth'], function () {
+    Route::resource('/role', RoleController::class)->except([
+        'create',
+        'edit',
+        'show',
+    ]);
+    Route::resource('/permission', PermissionController::class)->except([
+        'create',
+        'edit',
+        'show',
+    ]);
+
+    Route::resource('/menu', MenuController::class)->except([
+        'create',
+        'edit',
+        'show',
+    ]);
+    Route::resource('/subMenu', SubMenuController::class)->except([
+        'create',
+        'edit',
+        'show',
+    ]);
+    Route::resource('/profile', ProfileController::class)->only([
+        'index',
+        'create',
+        'update',
+    ]);
+});

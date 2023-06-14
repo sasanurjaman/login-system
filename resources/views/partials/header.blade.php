@@ -22,6 +22,7 @@
 
     <!-- Theme style -->
     <link rel="stylesheet" href="/dist/css/adminlte.min.css">
+    @stack('css')
 </head>
 
 <body class="hold-transition sidebar-mini">
